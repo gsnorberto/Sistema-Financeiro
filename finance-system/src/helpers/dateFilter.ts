@@ -2,7 +2,7 @@
 
 import { Item } from "../types/Item";
 
-//Retorna o Mês Atual
+//Retorna o Ano e Mês Atual (EX: 2022-2)
 export const getCurrentMonth = () => {
    let now = new Date;
    return `${now.getFullYear()}-${now.getMonth()+1}`
@@ -41,4 +41,13 @@ const addZeroToDate = (n: number): string => {
    }else{
       return `${n}`
    }
+}
+
+
+export const formatCurrentMonth = (currentMonth: string): string => {
+   let [year, month] = currentMonth.split('-');
+
+   let months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+
+   return `${months[parseInt(month)-1]}/${year}`
 }
