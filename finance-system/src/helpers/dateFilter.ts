@@ -22,7 +22,6 @@ export const filterListByMonth = (list: Item[], date: string) => {
          newList.push(list[i])
       }
    }
-
    return newList;
 }
 
