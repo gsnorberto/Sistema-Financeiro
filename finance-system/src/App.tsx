@@ -15,10 +15,12 @@ const App = () => {
    const [income, setIncome] = useState(0); //renda
    const [expense, setExpense] = useState(0); //despesas
 
+   // Atualiza a lista de acordo ao mês
    useEffect(() => {
       setFilteredList(filterListByMonth(list, currentMonth))
    }, [list, currentMonth]);
 
+   //Soma das despesas e receitas para mostrar na área de informações
    useEffect(()=>{
       let incomeCount = 0;
       let expenseCount = 0;
